@@ -26,6 +26,21 @@ app.get('/contact', function(req, res){
     res.render('contact', {title:'Contact'})
 })
 
+app.post('/contact', function(req, res){
+    res.render('thankyou', {title:'Thanks'})
+})
+
+app.get('/images', function(req, res){
+    res.render('images', {title:'Images'})
+})
+
+// This route is for the full image
+// It uses a route parameter
+app.get('/images/:id', function(req, res){
+    const fullImage = req.params.id
+    res.render('full-image', {title:`Image ${fullImage}`, id:fullImage})
+})
+
  //Tell the server how to start
  // our server url is localhost:3000
   // Our port will not use an environment variable if it's on heroku.. otherwise use 3000

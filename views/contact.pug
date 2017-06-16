@@ -2,3 +2,7 @@ extends template
 
 block content
     h1 Contact Us
+    form(method="POST")
+        input(type="text" name="name" placeholder="Your Name")
+        input(type="email" name="email" placeholder="you@whatev.com")
+        input(type="submit" value="submit form")
